@@ -1,0 +1,31 @@
+// Usamos lo que es variables porque ya tenemos definida la medida
+
+//  Mixins para mediaqueries
+@use "variables" as v;
+
+@mixin telefono {
+  @media (min-width: v.$telefono) {
+    @content;
+    //   Con arroba content todo lo que este en mediaquerie inserte en esta llave
+  }
+}
+
+@mixin tablet {
+  @media (min-width: v.$tablet) {
+    @content;
+    //   Con arroba content todo lo que este en mediaquerie inserte en esta llave
+  }
+}
+
+@mixin desktop {
+  @media (min-width: v.$desktop) {
+    @content;
+    //   Con arroba content todo lo que este en mediaquerie inserte en esta llave
+  }
+}
+
+@mixin grid($columnas,$espaciado) {
+  display: grid;
+  grid-template-columns: repeat($columnas, 1fr);
+  gap: $espaciado;
+}
